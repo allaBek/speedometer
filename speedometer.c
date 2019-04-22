@@ -33,3 +33,11 @@ uint16_t adc_read(uint8_t ch)
  
   return (ADC);
 }
+void print_lcd(char* msg, int size,uint8_t clr, uint8_t x, uint8_t y)
+{
+   if(clr == 1)
+   {nokia_lcd_clear();}
+   nokia_lcd_set_cursor(x,y);
+   nokia_lcd_write_string(msg,size);
+   nokia_lcd_render();
+}
